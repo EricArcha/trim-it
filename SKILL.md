@@ -59,11 +59,13 @@ Before escalation, state the proposed scope, likely benefit, and added cost. Wai
 
 ## Report with restraint
 
-State the review mode and the necessity baseline in one short line. Then provide no more than three high-confidence, action-oriented findings, sorted by expected impact. For each, include:
+Write for a busy reader, not for a reviewer. Match the user's language and use everyday words. Prefer a concrete verb ("remove", "combine", "decide once") over review jargon ("ablation", "scope", "orchestration"). Explain any necessary technical term in the same sentence. Do not make the reader infer the recommendation from a framework or a field label.
 
-- **Change:** what to remove, merge, defer, or automate.
-- **Evidence:** why the necessary result remains protected.
-- **Benefit:** qualitative savings in user decisions, calls/tokens, time, or maintenance. Never invent precise figures.
-- **Risk:** a relevant caveat or reversible path.
+Start with a one- or two-sentence plain-language verdict: what should change overall, or that nothing worth changing was found. Include the review mode and necessity baseline only when they help interpret that verdict; otherwise omit them.
 
-Only ask for a next action when authorization or an approved escalation is required. If no finding clears the evidence threshold, say plainly that no worthwhile trimming was found; do not manufacture a checklist to appear useful. Match the user's language.
+Then give at most three recommendations, ordered by impact. Make each one independently scannable:
+
+1. **Short action title** — say exactly what to do.
+   One short paragraph explaining why the result is still protected and what practical burden it removes. Mention a caveat only if the reader needs it to act safely.
+
+Use short paragraphs, not a four-field template. Avoid repeating the same point under "evidence", "benefit", and "risk". Do not quantify savings unless observed. Only ask for a next action when authorization or an approved escalation is required. If no finding clears the evidence threshold, say plainly that no worthwhile trimming was found; do not manufacture a checklist to appear useful.
