@@ -18,8 +18,9 @@ Treat the following as non-negotiable unless the user changes them:
 - the user's explicit requested outcome;
 - an already-confirmed plan and its acceptance criteria;
 - necessary quality, safety, security, compliance, and external-effect constraints.
+- a stated purpose or design goal of the artifact under review.
 
-Everything else is eligible for scrutiny. If no reliable baseline is present, ask one short question. If an answer is unavailable, infer a provisional baseline from the visible artifact, state that inference and its confidence, then continue. Do not block or start a clarification loop.
+If no reliable baseline is present, ask one short question that determines it. If an answer is unavailable, say that the artifact cannot be assessed safely and do not recommend a change. Do not infer a provisional baseline or start a clarification loop.
 
 ## Review cheaply
 
@@ -31,7 +32,23 @@ Route the review from the artifact in front of you:
 - **Implementation:** look for unused or unconsumed work, duplicate abstractions, redundant computation or requests, and maintenance that does not support the baseline.
 - **Skill or workflow:** look for unnecessary inputs, repeated clarifications, broad discovery, excessive output, and avoidable human-in-the-loop gates.
 
-Use ablation reasoning for each candidate: if this item were deleted, merged, delayed, or automated, would the necessary result and constraints still hold? Recommend a change only when the answer is supported by visible evidence. Label unresolved cases as hypotheses, not findings.
+Use ablation reasoning for each candidate: compare keeping it with deleting, merging, delaying, or automating it against the same protected result. A recommendation must be supported by visible evidence; do not include unresolved candidates in a default report. Discuss them only when the user explicitly asks for a deeper review, and label them as hypotheses with a minimal verification path.
+
+## Gate every recommendation
+
+Recommend a change only when all of these are true:
+
+- Visible evidence shows a concrete burden, duplication, or risk caused by the candidate.
+- A comparison shows that removing it preserves every protected result and constraint.
+- The burden disappears rather than moving elsewhere, becoming hidden work, or creating deferred drift.
+- The conclusion is limited to the material actually inspected.
+
+Classify the candidate before deciding what counts as comparison evidence:
+
+- **High risk:** safety, compliance, irreversible external effects, core quality, or cross-module effects. Require an observed before-and-after comparison. Without it, do not recommend a change or surface the candidate in the default report.
+- **Low risk:** local, reversible changes. A traceable counterfactual is enough when it names the protected result, the dependency that preserves it, and any assumption. State it as a reversible inference, never as verified fact.
+
+When the gates do not all pass, the safe result is no recommendation. Prefer a missed opportunity to an unsupported prescription.
 
 ## Protect against false simplification
 
@@ -61,17 +78,13 @@ Before escalation, state the proposed scope, likely benefit, and added cost. Wai
 
 Write for a busy reader, not for a reviewer. Match the user's language and use everyday words. Prefer a concrete verb ("remove", "combine", "decide once") over review jargon ("ablation", "scope", "orchestration"). Explain any necessary technical term in the same sentence. Do not make the reader infer the recommendation from a framework or a field label.
 
-Start with a one- or two-sentence plain-language verdict: what should change overall, or that nothing worth changing was found. Include the review mode and necessity baseline only when they help interpret that verdict; otherwise omit them.
+Start with a one- or two-sentence plain-language verdict and evidence level, in the user's language: verified, reversible inference, or cannot assess safely. Include the review mode and necessity baseline only when they help interpret that verdict; otherwise omit them. Do not use unproved coverage claims such as "only", "all", or "already sufficient".
 
 Then give at most three recommendations, ordered by impact. Make each one independently scannable:
 
 1. **Short action title** — say exactly what to do.
    One short paragraph explaining why it matters and what practical burden it removes.
 
-   <details>
-   <summary>依据与边界</summary>
+   **Evidence and boundary** (translated into the user's language): State the comparison evidence, protected result, and only the risk or assumption needed to act safely. Do not repeat the main paragraph.
 
-   Include only the evidence, necessary risk, or execution precondition that supports this recommendation. Do not repeat the main paragraph or create an empty block.
-   </details>
-
-If the client does not support collapsible blocks, render the same content as a short **依据与边界** paragraph. Use this structure instead of a four-field template; do not repeat the same point under separate "evidence", "benefit", and "risk" labels. Do not quantify savings unless observed. Only ask for a next action when authorization or an approved escalation is required. If no finding clears the evidence threshold, say plainly that no worthwhile trimming was found; do not manufacture a checklist or an empty collapsible block.
+Use this structure instead of a four-field template; do not repeat the same point under separate "evidence", "benefit", and "risk" labels. Do not quantify savings unless observed. Only ask for a next action when authorization or an approved escalation is required. If no finding clears every evidence gate, say plainly that no safe recommendation can be made from the inspected material. Do not manufacture a checklist, a candidate, or an empty evidence paragraph.
