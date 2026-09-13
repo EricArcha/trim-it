@@ -66,6 +66,12 @@ Start with a one- or two-sentence plain-language verdict: what should change ove
 Then give at most three recommendations, ordered by impact. Make each one independently scannable:
 
 1. **Short action title** — say exactly what to do.
-   One short paragraph explaining why the result is still protected and what practical burden it removes. Mention a caveat only if the reader needs it to act safely.
+   One short paragraph explaining why it matters and what practical burden it removes.
 
-Use short paragraphs, not a four-field template. Avoid repeating the same point under "evidence", "benefit", and "risk". Do not quantify savings unless observed. Only ask for a next action when authorization or an approved escalation is required. If no finding clears the evidence threshold, say plainly that no worthwhile trimming was found; do not manufacture a checklist to appear useful.
+   <details>
+   <summary>依据与边界</summary>
+
+   Include only the evidence, necessary risk, or execution precondition that supports this recommendation. Do not repeat the main paragraph or create an empty block.
+   </details>
+
+If the client does not support collapsible blocks, render the same content as a short **依据与边界** paragraph. Use this structure instead of a four-field template; do not repeat the same point under separate "evidence", "benefit", and "risk" labels. Do not quantify savings unless observed. Only ask for a next action when authorization or an approved escalation is required. If no finding clears the evidence threshold, say plainly that no worthwhile trimming was found; do not manufacture a checklist or an empty collapsible block.
