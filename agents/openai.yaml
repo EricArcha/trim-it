@@ -1,0 +1,6 @@
+interface:
+  display_name: "Trim It"
+  short_description: "Remove unnecessary complexity without losing the result"
+  default_prompt: "Use $trim-it to review this work for unnecessary complexity and cognitive load."
+policy:
+  allow_implicit_invocation: false
