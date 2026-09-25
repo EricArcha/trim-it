@@ -16,9 +16,11 @@ This is a review skill. Do not edit, delete, refactor, or run costly investigati
 Treat the following as non-negotiable unless the user changes them:
 
 - the user's explicit requested outcome;
-- an already-confirmed plan and its acceptance criteria;
-- necessary quality, safety, security, compliance, and external-effect constraints.
-- a stated purpose or design goal of the artifact under review.
+- the acceptance criteria of an already-confirmed plan, and any steps the user explicitly requires;
+- necessary quality, safety, security, compliance, and external-effect constraints;
+- the artifact's stated purpose when it defines the requested outcome.
+
+Treat other steps in a plan as candidates for review, even if the plan was previously approved. Preserve its committed result when comparing them.
 
 If no reliable baseline is present, ask one short question that determines it. If an answer is unavailable, say that the artifact cannot be assessed safely and do not recommend a change. Do not infer a provisional baseline or start a clarification loop.
 
@@ -48,6 +50,8 @@ Classify the candidate before deciding what counts as comparison evidence:
 - **High risk:** safety, compliance, irreversible external effects, core quality, or cross-module effects. Require an observed before-and-after comparison. Without it, do not recommend a change or surface the candidate in the default report.
 - **Low risk:** local, reversible changes. A traceable counterfactual is enough when it names the protected result, the dependency that preserves it, and any assumption. State it as a reversible inference, never as verified fact.
 
+If locality, reversibility, or downstream effects are unclear, treat the candidate as high risk. Do not claim that uninspected dependencies are preserved.
+
 When the gates do not all pass, the safe result is no recommendation. Prefer a missed opportunity to an unsupported prescription.
 
 ## Protect against false simplification
@@ -55,8 +59,8 @@ When the gates do not all pass, the safe result is no recommendation. Prefer a m
 Do not trade present complexity for hidden drift.
 
 - Never call a placeholder, stub, vague TODO, empty integration, or “we will handle it later” a simplification.
-- Classify every responsibility as exactly one of: delete; complete now; or conditionally defer. Merging or automating work is an implementation change, not a fourth state: it must still resolve to one of those three states.
-- Conditional deferral is valid only with a concrete trigger, a defined action at that trigger, and an unambiguous place where it re-enters the workflow. If maintaining those anchors costs more than the work, recommend deletion or completing it now instead.
+- For a proposed change, account for each responsibility it affects as exactly one of: delete; complete now; or conditionally defer. Merging or automating work is an implementation change, not a fourth state: it must still resolve to one of those three states. If a responsibility or its replacement is unclear, do not recommend the change.
+- Conditional deferral is valid only with a concrete trigger, a defined action at that trigger, and an unambiguous place where it re-enters the workflow. If maintaining those anchors costs more than the work, consider deletion or completing it now only when the evidence gates pass; otherwise make no recommendation.
 - Treat claims of completion without an observable implementation, integration, or verification path as high-risk false completion.
 
 ## Minimize human-in-the-loop burden
@@ -87,4 +91,4 @@ Then give at most three recommendations, ordered by impact. Make each one indepe
 
    **Evidence and boundary** (translated into the user's language): State the comparison evidence, protected result, and only the risk or assumption needed to act safely. Do not repeat the main paragraph.
 
-Use this structure instead of a four-field template; do not repeat the same point under separate "evidence", "benefit", and "risk" labels. Do not quantify savings unless observed. Only ask for a next action when authorization or an approved escalation is required. If no finding clears every evidence gate, say plainly that no safe recommendation can be made from the inspected material. Do not manufacture a checklist, a candidate, or an empty evidence paragraph.
+Use this structure instead of a four-field template; do not repeat the same point under separate "evidence", "benefit", and "risk" labels. Do not quantify savings unless observed. Only ask for a next action when authorization or an approved escalation is required. If no finding clears every evidence gate, say plainly that no safe recommendation can be made from the inspected material; this is not a claim that the artifact is safe or necessary. Do not manufacture a checklist, a candidate, or an empty evidence paragraph.
