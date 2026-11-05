@@ -5,7 +5,7 @@ description: Review a plan, implementation, or skill for unnecessary complexity,
 
 # Trim It
 
-A compact, evidence-based necessity review that any agent can follow without a particular tool or platform, run only when the user or an upstream workflow asks. Preserve the necessary result while finding what can be removed, merged, deferred safely, or automated; reducing user cognitive load comes before tokens and tool calls. Do not edit, delete, refactor, or run costly investigations unless the user separately authorizes it.
+A compact, evidence-based necessity review any agent can follow without a particular tool or platform, run only when the user or an upstream workflow asks. Preserve the necessary result while finding what can be removed, merged, deferred safely, or automated; reducing user cognitive load comes before tokens and tool calls. Do not edit, delete, refactor, or run costly investigations unless the user separately authorizes it.
 
 ## Establish the baseline
 
@@ -18,23 +18,23 @@ Treat these as non-negotiable unless the user changes them:
 
 Among the last three, the earlier wins a conflict for this review, and an outcome that contradicts the goals is also surfaced to the user.
 
-An artifact's own statement of purpose is not a baseline: where it departs from the goals, the gap is drift. Other plan steps are candidates, even in an approved plan; preserve its committed result when comparing.
+An artifact's own statement of purpose is not a baseline; its departure from the goals is drift. Other plan steps are candidates even in an approved plan; preserve its committed result.
 
-Without any of these, ask one short question that settles the baseline; without an answer, say the artifact cannot be assessed safely and recommend nothing. Never infer a provisional baseline or start a clarification loop.
+Without a goal anchor, draft one from the project's own records (README, design notes, decisions), never from the artifact under review: numbered G-, N-, A- items citing sources, one page at most. Ask once whether to review against it. Only the user's confirmed or corrected draft becomes this review's anchor; otherwise use the rest of the baseline. With no records to draft from, ask one short question that settles the baseline instead. If no baseline results, say the artifact cannot be assessed safely and recommend nothing. Never use an unconfirmed draft or start a clarification loop.
 
 ## Review cheaply
 
 Default to a light review of only the material relevant to the artifact and baseline; do not browse, scan a whole repository, dispatch agents, benchmark, or compute exact costs to be comprehensive. Look, by artifact:
 
-- **Plan:** uncommitted scope, premature architecture, redundant validation, unjustified orchestration, and unnecessary approvals.
+- **Plan:** uncommitted scope, premature architecture, redundant validation, unjustified orchestration, unneeded approvals.
 - **Implementation:** unused work, duplicate abstractions, redundant computation or requests, and maintenance outside the baseline.
-- **Skill or workflow:** unnecessary inputs, repeated clarifications, broad discovery, excessive output, and avoidable human-in-the-loop gates.
+- **Skill or workflow:** unneeded inputs, repeated clarifications, broad discovery, excessive output, avoidable human-in-the-loop gates.
 
 For each candidate, compare keeping it with deleting, merging, delaying, or automating it against the same protected result (ablation reasoning).
 
 ## Flags: work that traces to nothing in the baseline
 
-When a goal anchor exists, map each inspected feature, step, file, or rule to the baseline item it serves (a G- or A- item, constraint, required step, or plan criterion). Flag one serving none, or only an N- item, with the closest goal it misses. The mapping is the evidence, so no before-and-after comparison is needed; a flag asks the user to decide, never removes.
+With a goal anchor, map each inspected feature, step, file, or rule to the baseline item it serves (a G- or A- item, constraint, required step, or plan criterion). Flag one serving none, or only an N- item, with the closest goal it misses. The mapping is the evidence, so no before-and-after comparison is needed; a flag asks the user to decide, never removes.
 
 ## Recommendations: changes that pass every gate
 
@@ -76,15 +76,17 @@ Suggest, never perform, a deeper review when light inspection finds a substantia
 
 Write for a busy reader in the user's language, with everyday words and concrete verbs ("remove", "combine", "decide once"), not review jargon ("ablation", "scope"); explain any needed technical term in the same sentence. Never make the reader infer a recommendation from a framework or field label.
 
-Start with a one- or two-sentence verdict and evidence level: verified, reversible inference, or cannot assess safely. Mention the baseline only when it helps interpret the verdict. Avoid unproved coverage claims such as "only", "all", or "already sufficient".
+Start with a one- or two-sentence verdict and evidence level: verified, reversible inference, or cannot assess safely. Mention the baseline only when it helps. Avoid unproved coverage claims such as "only", "all", or "already sufficient".
+
+Append a drafted anchor, suggesting the user save it in `AGENTS.md`; never save it yourself.
 
 Then flags, at most five (if more, give the count and list those touching the most files or steps), one line each: `- <item> — serves no goal (closest: G-n)` or `— serves only N-n`. End with one question covering them: remove each, or name the goal it serves.
 
 Then at most three recommendations, by impact:
 
-1. **Short action title** — say exactly what to do.
-   One short paragraph explaining why it matters and what practical burden it removes.
+1. **Short action title** — exactly what to do.
+   One short paragraph: why it matters and what burden it removes.
 
-   **Evidence and boundary** (in the user's language): the comparison evidence, protected result, and only the risk or assumption needed to act safely. Do not repeat the main paragraph.
+   **Evidence and boundary** (in the user's language): the comparison evidence, protected result, and only the risk or assumption needed to act safely, without repeating the paragraph.
 
-Do not split one point across "evidence", "benefit", and "risk" labels or quantify unobserved savings. Ask for a next action only when authorization, a flag decision, or an approved escalation needs it. If nothing passes the gates and nothing is flagged, say no safe recommendation can be made from the inspected material (not a claim that the artifact is safe or necessary); never manufacture a checklist, candidate, or empty evidence paragraph.
+Do not split a point across "evidence", "benefit", "risk" labels or quantify unobserved savings. Ask for a next action only when authorization, a flag decision, or an approved escalation needs it. If nothing passes the gates and nothing is flagged, say no safe recommendation can be made from the inspected material (not a claim that the artifact is safe or necessary); never manufacture a checklist, candidate, or empty evidence paragraph.
