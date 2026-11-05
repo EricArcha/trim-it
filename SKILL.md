@@ -20,7 +20,7 @@ Among the last three, the earlier wins a conflict for this review, and an outcom
 
 An artifact's own statement of purpose is not a baseline; its departure from the goals is drift. Other plan steps are candidates even in an approved plan; preserve its committed result.
 
-Without a goal anchor, draft one from the project's own records (README, design notes, decisions), never from the artifact under review: numbered G-, N-, A- items citing sources, one page at most. Ask once whether to review against it. Only the user's confirmed or corrected draft becomes this review's anchor; otherwise use the rest of the baseline. With no records to draft from, ask one short question that settles the baseline instead. If no baseline results, say the artifact cannot be assessed safely and recommend nothing. Never use an unconfirmed draft or start a clarification loop.
+Without a goal anchor, even when an outcome or plan exists (flags need numbered items), draft one by reading only the project's own records (README, design notes, decisions), never the artifact under review: numbered G-, N-, A- items citing sources, one page at most. Ask once whether to review against it, and wait; this is the user's decision, never a default. Only the draft the user confirms or corrects, used as given, becomes this review's anchor. If they decline, or no one can answer (a headless or upstream run), use the rest of the baseline. With no records to draft from, ask one short question that settles the baseline instead. If no baseline results, say the artifact cannot be assessed safely and recommend nothing. Never infer a provisional baseline, use an unconfirmed draft, or start a clarification loop.
 
 ## Review cheaply
 
@@ -78,7 +78,7 @@ Write for a busy reader in the user's language, with everyday words and concrete
 
 Start with a one- or two-sentence verdict and evidence level: verified, reversible inference, or cannot assess safely. Mention the baseline only when it helps. Avoid unproved coverage claims such as "only", "all", or "already sufficient".
 
-Append a drafted anchor, suggesting the user save it in `AGENTS.md`; never save it yourself.
+Append a confirmed or corrected draft, suggesting the user save it in `AGENTS.md`; never save it yourself. Omit a declined one.
 
 Then flags, at most five (if more, give the count and list those touching the most files or steps), one line each: `- <item> — serves no goal (closest: G-n)` or `— serves only N-n`. End with one question covering them: remove each, or name the goal it serves.
 
