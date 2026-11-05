@@ -16,7 +16,7 @@ Treat these as non-negotiable unless the user changes them:
 - the project's goal anchor, if any: a `## Goals` section in the repository's agent instructions (usually `AGENTS.md`), with G- goals, N- non-goals, and A- acceptance items;
 - the acceptance criteria of an already-confirmed plan, and any steps the user explicitly requires.
 
-Among the last three, the earlier wins a conflict; an outcome that contradicts the goals goes to the user as a decision, not resolved silently.
+Among the last three, the earlier wins a conflict for this review, and an outcome that contradicts the goals is also surfaced to the user.
 
 An artifact's own statement of purpose is not a baseline: where it departs from the goals, the gap is drift. Other plan steps are candidates, even in an approved plan; preserve its committed result when comparing.
 
