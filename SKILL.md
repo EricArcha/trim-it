@@ -78,7 +78,7 @@ Write for a busy reader in the user's language, with everyday words and concrete
 
 Start with a one- or two-sentence verdict and evidence level: verified, reversible inference, or cannot assess safely. Mention the baseline only when it helps. Avoid unproved coverage claims such as "only", "all", or "already sufficient".
 
-Append a confirmed or corrected draft, suggesting the user save it in `AGENTS.md`; never save it yourself. Omit a declined one.
+Append a confirmed or corrected draft, suggesting the user save it in `AGENTS.md`; never save it yourself. Omit a declined or unanswered one.
 
 Then flags, at most five (if more, give the count and list those touching the most files or steps), one line each: `- <item> — serves no goal (closest: G-n)` or `— serves only N-n`. End with one question covering them: remove each, or name the goal it serves.
 
