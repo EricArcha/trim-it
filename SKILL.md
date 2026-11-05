@@ -50,7 +50,7 @@ Classify the candidate first:
 - **High risk:** safety, compliance, irreversible external effects, core quality, or cross-module effects. Require an observed before-and-after comparison; without it, do not recommend a change (a high-risk item that traces to nothing is still flagged).
 - **Low risk:** local, reversible changes. A traceable counterfactual naming the protected result, the dependency that preserves it, and any assumption is enough, stated as a reversible inference, never as verified fact.
 
-Unclear locality, reversibility, or downstream effects mean high risk; never claim uninspected dependencies are preserved. If any gate fails, recommend nothing: a missed opportunity beats an unsupported prescription. Discuss unresolved candidates only when the user asks for a deeper review, as hypotheses with a minimal verification path.
+Unclear locality, reversibility, or downstream effects mean high risk; never claim uninspected dependencies are preserved. If any gate fails, recommend nothing: a missed opportunity beats an unsupported prescription. Discuss unresolved candidates only when the user asks for a wider review, as hypotheses with a minimal verification path.
 
 ## Protect against false simplification
 
@@ -65,12 +65,9 @@ Do not trade present complexity for hidden drift.
 
 Keep a user decision only for an irreversible external effect, user-only knowledge or preference, authority/permission, or a material change to the necessary result. Otherwise use a reasonable, reversible default and disclose it briefly. Repeated confirmation, asking the user to resolve agent uncertainty, and questions the material already answers are candidates.
 
-## Escalate deliberately
+## Widen only with approval
 
-Suggest, never perform, a deeper review when light inspection finds a substantial signal. State the proposed scope, likely benefit, and added cost, then wait for the user's approval:
-
-- **Medium:** an issue spanning modules or workflow stages; a costly step of unclear necessity; or likely repeated, context-heavy work.
-- **Deep:** systemic waste likely to recur across projects; concrete evidence of expensive retries, long blocking, or frequent user decisions; or simplification that could compromise core quality, safety, compliance, or business requirements.
+When a finding reaches beyond the inspected material, say what else you would inspect, its likely benefit, and its added cost, and wait for the user's approval; never widen the review yourself.
 
 ## Report with restraint
 
@@ -89,4 +86,4 @@ Then at most three recommendations, by impact:
 
    **Evidence and boundary** (in the user's language): the comparison evidence, protected result, and only the risk or assumption needed to act safely, without repeating the paragraph.
 
-Do not split a point across "evidence", "benefit", "risk" labels or quantify unobserved savings. Ask for a next action only when authorization, a flag decision, or an approved escalation needs it. If nothing passes the gates and nothing is flagged, say no safe recommendation can be made from the inspected material (not a claim that the artifact is safe or necessary); never manufacture a checklist, candidate, or empty evidence paragraph.
+Do not split a point across "evidence", "benefit", "risk" labels or quantify unobserved savings. Ask for a next action only when authorization, a flag decision, or an approved wider review needs it. If nothing passes the gates and nothing is flagged, say no safe recommendation can be made from the inspected material (not a claim that the artifact is safe or necessary); never manufacture a checklist, candidate, or empty evidence paragraph.
