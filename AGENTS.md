@@ -11,6 +11,15 @@ UI metadata in `agents/openai.yaml`; its `display_name`, descriptions, and
 default prompt should accurately reflect the skill. `.gitignore` holds
 local-only exclusions. There are no source, asset, or test directories.
 
+Keep beginner-facing usage in `readme.md` (Chinese) and `readme.en.md`
+(English), with matching examples and boundaries. Record pending documentation
+or behavior changes in `changelog.md`; do not invent historical versions.
+Keep contribution, maintenance, and security guidance together in
+`contributing.md`. Preserve author attribution and sanitize examples before
+publication. Beginner-friendly wording must retain the development and AI
+workflow focus; do not broaden the use cases to make examples easier.
+These documents must not redefine the review rules.
+
 ## Development & Validation
 
 There is no build system or automated test suite. Validate changes before
