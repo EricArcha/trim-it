@@ -1,5 +1,10 @@
 # Trim It
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![Codex Skill](https://img.shields.io/badge/Codex-Skill-111111?style=flat-square)](https://learn.chatgpt.com/docs/build-skills)
+[![Review only](https://img.shields.io/badge/Mode-review%20only-7c3aed?style=flat-square)](SKILL.md)
+[![Bloat: on a diet](https://img.shields.io/badge/Bloat-on%20a%20diet-f97316?style=flat-square)](SKILL.md)
+
 **让 AI 检查开发计划、代码实现和 AI 工作流，找出可以少做的工作。**
 
 [English](readme.en.md) · 作者：[Eric / EricArcha](https://github.com/EricArcha)

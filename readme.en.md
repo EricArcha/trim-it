@@ -1,5 +1,10 @@
 # Trim It
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![Codex Skill](https://img.shields.io/badge/Codex-Skill-111111?style=flat-square)](https://learn.chatgpt.com/docs/build-skills)
+[![Review only](https://img.shields.io/badge/Mode-review%20only-7c3aed?style=flat-square)](SKILL.md)
+[![Bloat: on a diet](https://img.shields.io/badge/Bloat-on%20a%20diet-f97316?style=flat-square)](SKILL.md)
+
 **Review development plans, implementations, and AI workflows for work you can skip.**
 
 [中文](readme.md) · Created by [Eric / EricArcha](https://github.com/EricArcha)

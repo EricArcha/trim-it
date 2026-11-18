@@ -6,6 +6,9 @@ Based on verifiable Git history. Dates are commit dates, not public release date
 
 ## Unreleased / 未发布
 
+- 为双语 README 增加许可、Codex Skill、只审查及趣味徽章。
+  Added license, Codex Skill, review-only, and playful badges to both READMEs.
+
 - 采用 MIT 许可证，版权署名为 Eric / EricArcha。
   Adopted the MIT License with copyright attributed to Eric / EricArcha.
 - 新增面向新手的中文、英文 README，围绕开发与 AI 工作流，包含安装提示、开发计划练习和示意回答。
